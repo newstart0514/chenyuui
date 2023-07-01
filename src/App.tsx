@@ -1,11 +1,18 @@
 import React from 'react';
 import Button, {ButtonSize, ButtonType} from "./components/Button/button";
 import Alert, {alertType} from "./components/Alert/alert";
+import Menu from "./components/Menu/menu";
+import MenuItem from "./components/Menu/menuItem";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Menu defaultIndex={0} onSelect={(index) => alert(index)} mode={'vertical'}>
+          <MenuItem index={0}>Cool drink1</MenuItem>
+          <MenuItem index={1} disabled>Cool drink2</MenuItem>
+          <MenuItem index={2}>Cool drink3</MenuItem>
+        </Menu>
         <Button onClick={() => alert(123)}>Hello</Button>
         <Button disabled>Disabled Button</Button>
         <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>
