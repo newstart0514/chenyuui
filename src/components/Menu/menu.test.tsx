@@ -1,9 +1,8 @@
 import Menu, {MenuProps} from "./menu";
 import MenuItem from "./menuItem";
 import React from "react";
-import {cleanup, fireEvent, render, RenderResult} from "@testing-library/react";
+import {cleanup, fireEvent, render, RenderResult, waitFor} from "@testing-library/react";
 import SubMenu from "./subMenu";
-import {wait} from "@testing-library/user-event/dist/utils";
 
 const testProps: MenuProps = {
     children: undefined,
@@ -92,7 +91,7 @@ describe('test Menu and MenuItem component', () => {
         const dropdownElement = wrapper.getByText('dropdown')
         fireEvent.mouseEnter(dropdownElement)
         // 点击后会有一定的延时时间，所以这里需要用wait等待一下
-        await wait(() => {
+        await waitFor(() => {
             expect(wrapper.queryByText('drop1')).toBeVisible()
         })
         fireEvent.click(wrapper.getByText('drop1'))
@@ -114,12 +113,12 @@ describe('test Menu and MenuItem component in vertical mode', () => {
         const dropDownItem = wrapper2.getByText('drop1')
         expect(dropDownItem).not.toBeVisible()
         fireEvent.click(wrapper2.getByText('dropdown'))
-        await wait(() => {
+        await waitFor(() => {
             expect(dropDownItem).toBeVisible()
         })
     })
     it('should show submenu dropdown when defaultOpenSubMenu set', async () => {
-        await wait(() => {
+        await waitFor(() => {
             expect(wrapper2.queryByText('opened1')).toBeVisible()
         })
     })

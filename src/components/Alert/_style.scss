@@ -4,6 +4,7 @@
   margin-bottom: 1rem;
   border: 1px solid rgba(0,0,0,0);
   border-radius: .25rem;
+  font-size: inherit;
 }
 
 .bold-title {
@@ -34,31 +35,30 @@ svg:not(:root).svg-inline--fa {
 
 .svg-inline--fa {
   display: inline-block;
-  font-size: inherit;
   height: 1em;
   overflow: visible;
   vertical-align: -0.125em;
 }
 
-.alt-primary, .alt-default {
+.alert-primary, .alert-default {
   color: $alt-font-color;
   background: $alt-primary-color;
   border: $alt-primary-border;
 }
 
-.alt-success {
+.alert-success {
   color: $alt-font-color;
   background: $alt-success-color;
   border: $alt-success-border;
 }
 
-.alt-warning {
+.alert-warning {
   color: $alt-font-color;
   background: $alt-warning-color;
   border: $alt-warning-border;
 }
 
-.alt-danger {
+.alert-danger {
   color: $alt-font-color;
   background: $alt-danger-color;
   border: $alt-danger-border;
