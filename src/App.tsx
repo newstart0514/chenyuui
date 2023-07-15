@@ -3,15 +3,20 @@ import Button, {ButtonSize, ButtonType} from "./components/Button/button";
 import Alert, {alertType} from "./components/Alert/alert";
 import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
+import SubMenu from "./components/Menu/subMenu";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Menu defaultIndex={0} onSelect={(index) => alert(index)} mode={'vertical'}>
-          <MenuItem index={0}>Cool drink1</MenuItem>
-          <MenuItem index={1} disabled>Cool drink2</MenuItem>
-          <MenuItem index={2}>Cool drink3</MenuItem>
+        <Menu defaultIndex="0" onSelect={(index) => alert(index)} mode="vertical" defaultOpenSubMenus={['2']}>
+          <MenuItem>Cool drink1</MenuItem>
+          <MenuItem disabled>Cool drink2</MenuItem>
+          <SubMenu title="dropdown">
+            <MenuItem>dropdown 1</MenuItem>
+            <MenuItem>dropdown 2</MenuItem>
+          </SubMenu>
+          <MenuItem>Cool drink3</MenuItem>
         </Menu>
         <Button onClick={() => alert(123)}>Hello</Button>
         <Button disabled>Disabled Button</Button>
