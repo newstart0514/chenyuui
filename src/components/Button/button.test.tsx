@@ -7,8 +7,8 @@ const defaultProps = {
 }
 
 const testProps: ButtonProps = {
-    btnType: ButtonType.Primary,
-    size: ButtonSize.Large,
+    btnType: 'primary',
+    size: 'lg',
     className: 'class'
 }
 
@@ -36,7 +36,7 @@ describe('test Button', () => {
         expect(element.disabled).toBeFalsy()
     })
     it('should render a link when btnType equals link and href is provide', () => {
-        const warpper = render(<Button btnType={ButtonType.Link} href='https://www.baidu.com'>Link</Button>)
+        const warpper = render(<Button btnType='link' href='https://www.baidu.com'>Link</Button>)
         const element = warpper.getByText('Link') as HTMLButtonElement
         expect(element).toBeInTheDocument()
         expect(element.tagName).toEqual('A')

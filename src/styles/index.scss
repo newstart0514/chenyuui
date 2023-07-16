@@ -6,7 +6,13 @@
 
 @import "mixin";
 
+// 动画样式
+@import "animation";
+
 // 组件样式
 @import "../components/Button/style";
 @import "../components/Alert/style";
 @import "../components/Menu/style";
+@import "../components/Icon/style";
+
+

@@ -14,12 +14,12 @@
     &:focus {
       text-decoration: none;
     }
-    &.is_disabled {
+    &.is-disabled {
       color: $menu-item-disabled-color;
       pointer-events: none;
       cursor: default;
     }
-    &.is_active,
+    &.is-active,
     &:hover {
       color: $menu-item-active-color;
       border-bottom: $menu-item-active-border-width solid $menu-item-active-color;
@@ -41,35 +41,35 @@
       }
     }
   }
-  .is_vertical {
+  .is-vertical {
     .arrow-icon {
       transform: rotate(0deg) !important;
     }
   }
-  .is_vertical.is_opened {
+  .is-vertical.is-opened {
     .arrow-icon {
       transform: rotate(180deg) !important;
     }
   }
   .submenu {
-    display: none;
+    // display: none;
     list-style: none;
     padding-left: 0;
     white-space: nowrap;
-    transition: $menu-transition;
+    // transition: $menu-transition;
     .menu-item {
       padding: $menu-item-padding-y $menu-item-padding-x;
       cursor: pointer;
       transition: $menu-transition;
       color: $body-color;
-      &.is_active,
+      &.is-active,
       &:hover {
         color: $menu-item-active-color !important;
       }
     }
   }
-  .menu-opened {
-    display: block;
+  .submenu.menu-opened {
+    // display: block;
   }
 }
 
