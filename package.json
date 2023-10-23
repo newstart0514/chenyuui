@@ -1,7 +1,15 @@
 {
-  "name": "chen_yu_ui",
+  "name": "CYUI",
   "version": "0.1.0",
-  "private": true,
+  "description": "a React Component library",
+  "author": "youli_li",
+  "private": false,
+  "license": "MIT",
+  "keywords": [
+    "Component",
+    "react",
+    "UI"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
@@ -13,25 +21,33 @@
     "@types/node": "^16.18.23",
     "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",
+    "axios": "^1.4.0",
     "classnames": "^2.3.2",
     "node-sass": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "react-transition-group": "^4.4.5",
+    "rimraf": "^5.0.5",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run clear && run build-ts && npm run build-css",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "clear": "rimraf ./build",
+    "eject": "react-scripts eject",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "node-sass ./src/styles/index.scss ./build/index.css",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:storybook/recommended"
     ]
   },
   "browserslist": {
@@ -45,5 +61,21 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "7.1.0",
+    "@storybook/addon-interactions": "7.1.0",
+    "@storybook/addon-links": "7.1.0",
+    "@storybook/addon-onboarding": "1.0.8",
+    "@storybook/blocks": "7.1.0",
+    "@storybook/preset-create-react-app": "7.1.0",
+    "@storybook/react": "7.1.0",
+    "@storybook/react-webpack5": "7.1.0",
+    "@storybook/testing-library": "0.2.0",
+    "babel-plugin-named-exports-order": "0.0.2",
+    "eslint-plugin-storybook": "^0.6.12",
+    "prop-types": "15.8.1",
+    "storybook": "7.1.0",
+    "webpack": "5.88.1"
   }
 }
