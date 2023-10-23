@@ -5,5 +5,5 @@
 ## 安装
 
 ```shell
-npm i CYUI
+npm i chenyu
 ```

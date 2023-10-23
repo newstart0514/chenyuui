@@ -1,14 +1,25 @@
 {
-  "name": "CYUI",
-  "version": "0.1.0",
+  "name": "chenyu",
+  "version": "0.1.1",
   "description": "a React Component library",
   "author": "youli_li",
   "private": false,
   "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "keywords": [
     "Component",
     "react",
     "UI"
+  ],
+  "homepage": "https://github.com/newstart0514/chenyuui",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/newstart0514/chenyuui"
+  },
+  "files": [
+    "dist"
   ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
@@ -36,12 +47,13 @@
     "start": "react-scripts start",
     "build": "npm run clear && run build-ts && npm run build-css",
     "test": "react-scripts test",
-    "clear": "rimraf ./build",
+    "clear": "rimraf ./dist",
     "eject": "react-scripts eject",
     "build-ts": "tsc -p tsconfig.build.json",
-    "build-css": "node-sass ./src/styles/index.scss ./build/index.css",
+    "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepublish": "npm run build"
   },
   "eslintConfig": {
     "extends": [
